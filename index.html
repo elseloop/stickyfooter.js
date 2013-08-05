@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <title>Stickyfooter test</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="stickyfooter.jquery.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: cornflowerblue;
+        font-family: sans-serif;
+        font-size: 100%;
+        color: #333;
+        line-height: 1.5;
+      }
+      p {
+        margin-bottom: 1em;
+      }
+      .inner-wrap {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .main-content {
+        padding-top: 2em;
+        color: white;
+      }
+      .site-header {
+        padding: 2em 0;
+        background-color: #e0e0e0;
+        border-bottom: 1px solid navy;
+      }
+      .site-footer {
+        width: 100%;
+        border-top: 1px solid navy;
+        background-color: #e0e0e0;
+      }
+      .site-footer .inner-wrap {
+        padding: 2em 0;
+      }
+
+      .button {
+        display: inline-block;
+        background-color: #333;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 1em 0;
+        padding: .5em .75em;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-radius: 4px;
+      }
+      .button:hover {
+        background-color: #ccc;
+        color: #333;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+    
+    <div class="outer-wrap">
+      
+      <header class="site-header">
+        <div class="inner-wrap">
+          <h1>StickyFooter.js Demo</h1>
+        </div>
+      </header>
+
+      <div class="inner-wrap main-content">
+        
+        <h1>Work?</h1>
+        <p>We'll see&hellip;</p>
+        <p><a href="#" class="button addmore">Add Content</a></p>
+      </div>
+
+    </div>
+
+    <footer class="site-footer">
+      
+      <div class="inner-wrap">
+        <h3>Footer!</h3>
+        <p>This is some content.</p>
+        <p>This is some more content.</p>
+      </div>
+
+    </footer>
+
+    <script type="text/javascript">
+
+      (function($) {
+        
+        $( ".site-footer" ).stickyFooter();
+
+        $( '.addmore' ).on( "click", function() {
+          $( '.outer-wrap .main-content' ).append( "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, repellat, incidunt, unde dolores nesciunt aut ipsam mollitia aperiam quam corporis fugit earum in repudiandae optio excepturi autem blanditiis libero voluptatum.</p>");
+        });
+      })(jQuery);
+    </script>
+
+  </body>
+
+</html>
